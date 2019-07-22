@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('load', function() {
   // canvasエレメントを取得
   var c = document.getElementById('canvas');
   c.width = 500;
