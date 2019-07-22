@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // canvasを黒でクリア(初期化)する
   gl.clearColor(0.0, 0.0, 0.0, 1.0);
-  gl.clear(gl.COLOR_BUFFER_BIT);
 
-  console.log('hello');
+  // canvasを初期化
+  gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 });
