@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <title>WebGL TEST 014</title>
+    <script src="../lib/minMatrix.js"></script>
+    <script src="script.js"></script>
+
+    <script id="vs" type="x-shader/x-vertex">
+attribute vec3 position;
+uniform   mat4 mvpMatrix;
+
+void main(void){
+	gl_Position = mvpMatrix * vec4(position, 1.0);
+}
+    </script>
+
+    <script id="fs" type="x-shader/x-fragment">
+void main(void){
+	gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+    </script>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+  </body>
+</html>
