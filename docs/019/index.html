@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <title>WebGL TEST 019</title>
+    <script src="../lib/minMatrix.js"></script>
+    <script src="script.js"></script>
+
+    <script id="vs" type="x-shader/x-vertex">
+      attribute vec3 position;
+      attribute vec4 color;
+      uniform   mat4 mvpMatrix;
+      varying   vec4 vColor;
+
+      void main(void){
+        vColor = color;
+        gl_Position = mvpMatrix * vec4(position, 1.0);
+      }
+    </script>
+
+    <script id="fs" type="x-shader/x-fragment">
+      precision mediump float;
+
+      varying vec4 vColor;
+
+      void main(void){
+        gl_FragColor = vColor;
+      }
+    </script>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <ul>
+      <li><input id="cull" type="checkbox">enable culling</li>
+      <li><input id="front" type="checkbox">enable frontface (check -&gt; CCW)</li>
+      <li><input id="depth" type="checkbox">enable depth test</li>
+    </ul>
+  </body>
+</html>
